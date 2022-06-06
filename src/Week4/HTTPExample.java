@@ -13,7 +13,7 @@ public class HTTPExample {
 
         try {
 
-            URL url = url = new URL(string);
+            URL url = new URL(string);
             HttpURLConnection http = (HttpURLConnection) url.openConnection();
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(http.getInputStream()));

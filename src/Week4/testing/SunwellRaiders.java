@@ -1,4 +1,4 @@
-package Week4;
+package Week4.testing;
 
 public class SunwellRaiders {
     private String toon;
