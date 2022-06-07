@@ -24,7 +24,11 @@ public class Division {
 
         } while (num2 == 0);
 
-        quotient = num1/num2;
+        try {
+            quotient = num1/num2;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("Your quotient is " + quotient + ".");
         }
 }
