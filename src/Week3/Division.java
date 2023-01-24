@@ -5,13 +5,13 @@ import java.util.*;
 public class Division {
 
     public static void main(String[] args) {
-        int quotient = 0;
+        int quotient;
 
-        System.out.print("Please enter the first number.");
+        System.out.print("Please enter the first number to be divided.");
         Scanner s1 = new Scanner(System.in);
         int num1 = s1.nextInt();
 
-        System.out.print("Please enter the second number.");
+        System.out.print("Please enter the second number to be divided.");
         Scanner s2 = new Scanner(System.in);
         int num2;
 
@@ -19,7 +19,7 @@ public class Division {
             num2 = s2.nextInt();
 
             if (num2 ==0) {
-                System.out.println("A number cannot be divided by 0, please enter a number other than 0");
+                System.out.println("A number cannot be divided by 0, please enter a number other than 0.");
             }
 
         } while (num2 == 0);
