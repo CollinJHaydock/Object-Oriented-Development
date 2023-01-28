@@ -1,5 +1,6 @@
-package Week4;
+package Week4.Testing;
 
+import Week4.SunwellRaiders;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
