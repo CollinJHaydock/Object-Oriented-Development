@@ -1,32 +1,38 @@
 package Week5;
 
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert.*;
+import org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 class SimpleCalculatorTest {
 
     @Test
     void onePlusOneShouldEqualTwo () {
         SimpleCalculator calculator = new SimpleCalculator();
-        assertEquals(2, calculator.add(1, 1));
+        assertEquals(2, calculator.sum(1, 1));
     }
 
     @Test
     void onePlusOneShouldEqualTen () {
         SimpleCalculator calculator = new SimpleCalculator();
-        assertTrue(calculator.add(4, 6) == 10);
+        assertTrue(calculator.sum(4, 6) == 10);
     }
 
     @Test
-    void tenDividedby3DoesNotEqual0 () {
+    void tenDividedBy3DoesNotEqual0 ()
+    {
         assertNotEquals(0,SimpleCalculator.divide(10, 3));
     }
 
     @Test
     void onePlusOneDoesntEqual10 () {
         SimpleCalculator calculator = new SimpleCalculator();
-        assertFalse(calculator.add(1,1) != 2);
+        assertFalse(calculator.sum(1,1) != 2);
     }
 
     @Test
@@ -61,20 +67,25 @@ class SimpleCalculatorTest {
     @Test
     void areTheseArraysEqual() {
         int array1[] = {1,2,3};
-        int array2[] = {1,2,3};
-        assertArrayEquals(array1,array2);
+        int array2[] = {0,0,0};
+        int sum[] = {0, 0, 0};
+
+            for (int i = 0; i < 3; i++) {
+                sum[i] = SimpleCalculator.sum(array1[i],0);
+        }
+        assertArrayEquals(array1,sum);
     }
 
     @Test
-    void stirngIsNull() {
-        String message = null;
-        assertNull(message, message);
+    void stringIsNull() {
+        String isNull = SimpleCalculator.isNull();
+        assertNull(isNull);
     }
 
     @Test
     void stringIsNotNull(){
-        String message = "I love math";
-        assertNotNull(message);
+        int quotient = SimpleCalculator.divide(4,2);
+        assertNotNull(quotient);
     }
 
     @Test
@@ -84,4 +95,30 @@ class SimpleCalculatorTest {
         assertEquals(6, calculator.sum(sum));
     }
 
+    @Test
+    void sumOfTwoDifferentNumbersIsSame() {
+        int sum1 = SimpleCalculator.sum(1,2);
+        int sum2 = SimpleCalculator.sum(2,1);
+        assertSame(sum1, sum2);
+    }
+
+    @Test
+    void sumOfTwoDifferentNumbersIsNotSame() {
+        int sum1 = SimpleCalculator.sum(1,2);
+        int sum2 = SimpleCalculator.sum(2,2);
+        assertNotSame(sum1, sum2);
+    }
+
+    @Test
+    void testThatNumber1TimesTwoIsNumber2(){
+        int number1 = SimpleCalculator.multiply(1,6);
+        int number2 = 6;
+        assertThat(number1,is(number2));
+    }
+
+    @Test
+    void testIsNull () {
+        String isNull = SimpleCalculator.isNull();
+        assertNull(isNull);
+    }
 }

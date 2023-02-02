@@ -39,7 +39,7 @@ public class httpServer {
     public static void main(String[] args) throws IOException {
         int port = 8001;
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
-        System.out.println("Server started at " + port);
+        System.out.println("Server started at port: " + port);
         server.createContext("/", new MyHttpHandler());
         server.setExecutor(null);
         server.start();
